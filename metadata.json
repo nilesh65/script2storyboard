@@ -1,0 +1,5 @@
+{
+  "name": "Script2Story",
+  "description": "A smart storyboard generator that converts raw script text into formatted, printable A4 storyboard sheets using Gemini AI.",
+  "requestFramePermissions": []
+}
