@@ -3,13 +3,13 @@ import { StoryboardPanel } from "../types";
 
 // Helper to generate IDs
 const generateId = () => Math.random().toString(36).substr(2, 9);
-
+const key = import.meta.env.VITE_API_KEY
 export const parseScriptToStoryboard = async (scriptText: string): Promise<StoryboardPanel[]> => {
-  if (!process.env.API_KEY) {
+  if (!key) {
     throw new Error("API Key is missing.");
   }
 
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: key });
 
   // Define the schema for the AI response to ensure strict JSON structure
   const responseSchema = {
